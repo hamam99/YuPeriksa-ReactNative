@@ -20,6 +20,7 @@
 		125692C5005A40AA95782592 /* SegoeUI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88E82DF5C82242A2AA413914 /* SegoeUI-Italic.ttf */; };
 		6780B952D1854C5ABD75AA21 /* SegoeUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEFF410E181048CBBD3EEB6C /* SegoeUI-Regular.ttf */; };
 		53B1C9F813454B4D8DDC5E14 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6DE42BD2AD5492098F3C11A /* Montserrat-SemiBold.ttf */; };
+		9EAF565D4A9E4A999338B316 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B4806E14584B63B2C15FF8 /* Roboto-Regular.ttf */; };
 		31773E0C28634C78858B6FAB /* SegoeUI-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C17ECD25F304B0D95A8DB64 /* SegoeUI-Bold.ttf */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		88E82DF5C82242A2AA413914 /* SegoeUI-Italic.ttf */ = {isa = PBXFileReference; name = "SegoeUI-Italic.ttf"; path = "../src/assets/fonts/SegoeUI-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		BEFF410E181048CBBD3EEB6C /* SegoeUI-Regular.ttf */ = {isa = PBXFileReference; name = "SegoeUI-Regular.ttf"; path = "../src/assets/fonts/SegoeUI-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C6DE42BD2AD5492098F3C11A /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; name = "Montserrat-SemiBold.ttf"; path = "../src/assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		03B4806E14584B63B2C15FF8 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6C17ECD25F304B0D95A8DB64 /* SegoeUI-Bold.ttf */ = {isa = PBXFileReference; name = "SegoeUI-Bold.ttf"; path = "../src/assets/fonts/SegoeUI-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 				88E82DF5C82242A2AA413914 /* SegoeUI-Italic.ttf */,
 				BEFF410E181048CBBD3EEB6C /* SegoeUI-Regular.ttf */,
 				C6DE42BD2AD5492098F3C11A /* Montserrat-SemiBold.ttf */,
+				03B4806E14584B63B2C15FF8 /* Roboto-Regular.ttf */,
 				6C17ECD25F304B0D95A8DB64 /* SegoeUI-Bold.ttf */,
 			);
 			name = Resources;
@@ -258,6 +261,7 @@
 				125692C5005A40AA95782592 /* SegoeUI-Italic.ttf in Resources */,
 				6780B952D1854C5ABD75AA21 /* SegoeUI-Regular.ttf in Resources */,
 				53B1C9F813454B4D8DDC5E14 /* Montserrat-SemiBold.ttf in Resources */,
+				9EAF565D4A9E4A999338B316 /* Roboto-Regular.ttf in Resources */,
 				31773E0C28634C78858B6FAB /* SegoeUI-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
