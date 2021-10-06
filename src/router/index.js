@@ -2,13 +2,13 @@
 import React from 'react';
 import 'react-native-gesture-handler';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Intro, Main, Splash } from '../pages';
+import { Intro, Login, Main, Splash } from '../pages';
 
 const Stack = createNativeStackNavigator();
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Intro">
+    <Stack.Navigator initialRouteName="Login">
       <Stack.Screen
         name="Intro"
         component={Intro}
@@ -17,6 +17,11 @@ const Router = () => {
       <Stack.Screen
         name="Splash"
         component={Splash}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Login"
+        component={Login}
         options={{headerShown: false}}
       />
       <Stack.Screen
