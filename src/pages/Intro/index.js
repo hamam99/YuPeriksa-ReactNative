@@ -3,17 +3,20 @@ import {
   Image,
   ImageBackground,
   Pressable,
+  StatusBar,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {doctors, IntroBackground, LogoYuPeriksa} from '../../assets';
-import {colors} from '../../utils/colors';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { doctors, IntroBackground, LogoYuPeriksa } from '../../assets';
+import { colors } from '../../utils/colors';
+import * as Font from '../../assets/fonts/index';
 
-const Intro = () => {
+const Intro = ({ navigation }) => {
   return (
     <View style={_styles.container}>
+      <StatusBar backgroundColor={colors.background.secondary} />
       <Image
         source={require('../../assets/icons/logo-yuperiksa.png')}
         style={_styles.logo}
@@ -27,7 +30,11 @@ const Intro = () => {
         style={_styles.footerImage}
         resizeMode={'contain'}
       />
-      <Pressable style={_styles.footerButtonWrapper} onPress={() => {}}>
+      <Pressable
+        style={_styles.footerButtonWrapper}
+        onPress={() => {
+          navigation.navigate('Login');
+        }}>
         <Text style={_styles.footerButtonText}>Get Started</Text>
       </Pressable>
     </View>
@@ -49,20 +56,20 @@ const _styles = StyleSheet.create({
   },
   title1: {
     color: colors.text.white,
-    fontSize: 38,
-    fontFamily: 'Montserrat-SemiBold',
+    fontSize: Font.FONTSIZE_XXL,
+    fontFamily: Font.FAMILY_SEMI_BOLD,
     textAlign: 'center',
     paddingVertical: 36,
   },
   title2: {
     color: colors.text.white,
-    fontSize: 19,
-    fontFamily: 'Montserrat-Medium',
+    fontSize: Font.FONTSIZE_MD,
+    fontFamily: Font.FAMILY_MEDIUM,
     textAlign: 'center',
   },
   footerImage: {
-    width: 542,
-    height: 333,
+    width: 500,
+    height: 300,
     marginLeft: -50,
     position: 'absolute',
     bottom: 0,
@@ -71,16 +78,16 @@ const _styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     right: 0,
-    height: 81,
-    width: 230,
-    borderTopLeftRadius: 230 / 2,
-    backgroundColor: '#fff',
+    height: 50,
+    width: 150,
+    borderTopLeftRadius: 80 / 2,
+    backgroundColor: colors.text.white,
     alignItems: 'center',
     justifyContent: 'center',
   },
   footerButtonText: {
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 16,
+    fontFamily: Font.FAMILY,
+    fontSize: Font.FONTSIZE_MD,
     color: colors.text.blue2,
   },
 });

@@ -17,6 +17,7 @@ export const colors = {
   background: {
     main: mainColors.white,
     secondary: mainColors.blue,
+    orange: mainColors.orange,
   },
   text: {
     white: mainColors.white,
