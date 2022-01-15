@@ -1,5 +1,8 @@
-import Home from './Home';
-import Search from './Search';
-import Profile from './Profile';
+import React from 'react';
+import {Text} from 'react-native';
 
-export { Home, Search, Profile };
+const Main = () => {
+  return <Text>Main is here</Text>;
+};
+
+export default Main;
