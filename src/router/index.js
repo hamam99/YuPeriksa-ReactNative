@@ -1,14 +1,37 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import 'react-native-gesture-handler';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import { TransitionPresets } from '@react-navigation/stack';
 import { Intro, Login, Home, Search, Profile, Splash, Register, ForgotPassword } from '../pages';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
+
+const config = {
+  animation: 'spring',
+  config: {
+    stiffness: 1000,
+    damping: 500,
+    mass: 3,
+    overshootClamping: true,
+    restDisplacementThreshold: 0.01,
+    restSpeedThreshold: 0.01,
+  },
+};
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Intro">
+    <Stack.Navigator
+    screenOptions={{
+      ...TransitionPresets.DefaultTransition,
+      headerMode: 'screen',
+      transitionSpec: {
+        open: config,
+        close: config,
+      },
+    }}
+    initialRouteName="Intro">
       <Stack.Screen
         name="Intro"
         component={Intro}
