@@ -1,222 +1,100 @@
 import React from 'react';
-import {
-  Image,
-  Pressable,
-  StatusBar,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
-import { facebookIcon, googleIcon, LogoYuPeriksa } from '../../assets';
-import * as Font from '../../assets/fonts/index';
+import { Pressable, View, Image, Text, StyleSheet } from 'react-native';
+import { Divider } from 'react-native-elements';
+import * as Font from '../../assets';
+import { Input, TextCustom } from '../../components/atoms';
+import { TemplateLogin } from '../../components/organism';
 import { colors } from '../../utils/colors';
+import { facebookIcon, googleIcon, LogoYuPeriksa } from '../../assets';
 
 const Login = ({ navigation }) => {
-  const renderLogo = () => {
+  const styles = StyleSheet.create({
+    pressable: {
+      borderRadius: 15,
+      flex: 1,
+      justifyContent: 'center',
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    iconGoogle: {
+      width: 20,
+      height: 20,
+      alignSelf: 'center',
+      marginRight: 21,
+      position: 'absolute',
+      left: 0,
+      marginLeft: 13,
+    },
+    iconFacebook: {
+      width: 30,
+      height: 30,
+      alignSelf: 'center',
+      marginRight: 21,
+      position: 'absolute',
+      left: 0,
+    },
+    containerFooter: {
+      flexDirection: 'column',
+      alignContent: 'center',
+    },
+  });
+
+  const TextFooter = () => {
     return (
-      <Image
-        source={LogoYuPeriksa}
-        resizeMode="contain"
-        style={{ width: 150, height: 54, marginVertical: 43 }}
-      />
-    );
-  };
-
-  const renderForm = () => {
-    return (
-      <View
-        style={{
-          width: '100%',
-          height: '100%',
-          backgroundColor: colors.background.main,
-          borderTopRightRadius: 30,
-          borderTopLeftRadius: 30,
-          padding: 40,
-        }}>
-        <StatusBar backgroundColor={colors.background.secondary} />
-        <Text
-          style={{
-            fontFamily: Font.FAMILY_BOLD,
-            fontSize: Font.FONTSIZE_LG,
-            color: colors.text.blue,
-            marginBottom: 20,
-          }}>
-          Masuk
-        </Text>
-        <TextInput
-          style={{
-            height: 45,
-            width: '100%',
-            borderRadius: 10,
-            borderColor: colors.border,
-            borderWidth: 1,
-            paddingHorizontal: 15,
-            marginBottom: 20,
-          }}
-          placeholder={'Masukan Email Anda'}
-        />
-
-        <TextInput
-          style={{
-            height: 45,
-            width: '100%',
-            borderRadius: 10,
-            borderColor: colors.border,
-            borderWidth: 1,
-            paddingHorizontal: 15,
-          }}
-          placeholder={'Masukan Password Anda'}
-        />
-
-        <Pressable
-          onPress={() => {
-            navigation.navigate('Home');
-          }}
-          style={{
-            backgroundColor: colors.button.background1,
-            borderRadius: 15,
-            height: 45,
-            width: '100%',
-            justifyContent: 'center',
-            marginTop: 20,
-          }}>
-          <Text
-            style={{
-              alignSelf: 'center',
-              color: colors.text.white,
-              fontFamily: Font.FAMILY_BOLD,
-              fontSize: Font.FONTSIZE_MD,
-            }}>
-            LOGIN
-          </Text>
-        </Pressable>
+      <View style={styles.containerFooter}>
         <View
           style={{
-            height: 1,
-            width: '100%',
-            backgroundColor: colors.border,
-            marginVertical: 30,
-          }}
-        />
-        <View
-          style={{
-            height: 45,
-            width: '100%',
             flexDirection: 'row',
+            height: 40,
           }}>
-          <Pressable
-            style={{
-              borderRadius: 15,
-              flex: 1,
-              justifyContent: 'center',
-              alignContent: 'center',
-              flexDirection: 'row',
-              marginRight: 20,
-              borderWidth: 1,
-              borderColor: colors.border,
-            }}>
-            <Image
-              source={googleIcon}
-              style={{
-                width: 20,
-                height: 20,
-                alignSelf: 'center',
-                marginRight: 21,
-                position: 'absolute',
-                left: 0,
-                marginLeft: 13,
-              }}
-            />
-            <Text
+          <Pressable style={[styles.pressable, { marginRight: 20 }]}>
+            <Image source={googleIcon} style={styles.iconGoogle} />
+            <TextCustom
+              text={'Google'}
               style={{
                 fontFamily: Font.FAMILY_BOLD,
                 fontSize: Font.FONTSIZE_MD,
                 alignSelf: 'center',
-              }}>
-              Google
-            </Text>
+              }}
+            />
           </Pressable>
-          <Pressable
-            style={{
-              borderRadius: 15,
-              flex: 1,
-              justifyContent: 'center',
-              alignContent: 'center',
-              flexDirection: 'row',
-              borderWidth: 1,
-              borderColor: colors.border,
-            }}>
-            <Image
-              source={facebookIcon}
-              style={{
-                width: 30,
-                height: 30,
-                alignSelf: 'center',
-                marginRight: 21,
-                position: 'absolute',
-                left: 0,
-              }}
-            />
-            <Text
+          <Pressable style={styles.pressable}>
+            <Image source={facebookIcon} style={styles.iconFacebook} />
+            <TextCustom
+              text={'Facebook'}
               style={{
                 fontFamily: Font.FAMILY_BOLD,
                 fontSize: Font.FONTSIZE_MD,
                 alignSelf: 'center',
-              }}>
-              Facebook
-            </Text>
+              }}
+            />
           </Pressable>
         </View>
-
-        <View
-          style={{
-            flexDirection: 'row',
-            marginTop: 30,
-            height: 35,
-            alignContent: 'center',
-          }}>
-          <Text
+        <View style={{ flexDirection: 'row', marginTop: 15 }}>
+          <TextCustom
+            text={'Anda Lupa Password ? '}
             style={{
-              fontFamily: Font.FAMILY,
-              fontSize: Font.FONTSIZE_MD,
               color: colors.text.forth,
-            }}>
-            {'Anda Lupa Password ? '}
-          </Text>
+            }}
+          />
           <Pressable
             onPress={() => {
               navigation.navigate('ForgotPassword');
             }}>
-            <Text
-              style={{
-                fontFamily: Font.FAMILY,
-                fontSize: Font.FONTSIZE_MD,
-                color: colors.text.tertiery,
-              }}>
-              Reset
-            </Text>
+            <TextCustom text={'Reset'} />
           </Pressable>
-          <Text
+          <TextCustom
+            text={'atau'}
             style={{
-              fontFamily: Font.FAMILY,
-              fontSize: Font.FONTSIZE_MD,
               color: colors.text.forth,
               marginHorizontal: 5,
-            }}>
-            atau
-          </Text>
+            }}
+          />
           <Pressable
             onPress={() => {
               navigation.navigate('Register');
             }}>
-            <Text
-              style={{
-                fontFamily: Font.FAMILY,
-                fontSize: Font.FONTSIZE_MD,
-                color: colors.text.tertiery,
-              }}>
-              Daftar
-            </Text>
+            <TextCustom text={'Daftar'} />
           </Pressable>
         </View>
       </View>
@@ -224,15 +102,41 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: colors.background.secondary,
-        alignItems: 'center',
-      }}>
-      {renderLogo()}
-      {renderForm()}
-    </View>
+    <TemplateLogin>
+      <TextCustom
+        text={'MASUK'}
+        style={{
+          marginBottom: 20,
+          fontSize: Font.FONTSIZE_MD,
+          color: colors.text.secondary,
+          fontFamily: Font.FAMILY_BOLD,
+        }}
+      />
+      <Input placeholder={'Masukan E-mail'} style={{ marginBottom: 20 }} />
+      <Input placeholder={'Masukan Password'} style={{ marginBottom: 20 }} />
+      <Pressable
+        style={{
+          backgroundColor: colors.text.orange,
+          height: 40,
+          borderRadius: 10,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <TextCustom
+          text={'LOGIN'}
+          style={{
+            color: colors.text.white,
+            fontFamily: Font.FAMILY_BOLD,
+          }}
+        />
+      </Pressable>
+      <Divider
+        width={1}
+        color={colors.text.grey2}
+        style={{ marginVertical: 20 }}
+      />
+      {TextFooter()}
+    </TemplateLogin>
   );
 };
 
