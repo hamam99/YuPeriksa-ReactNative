@@ -24,10 +24,12 @@ export const colors = {
     blue: mainColors.blue,
     blue2: mainColors.blue2,
     grey: mainColors.grey1,
+    grey2: mainColors.grey2,
     primary: mainColors.black,
     secondary: mainColors.blue,
     tertiery: mainColors.blue2,
     forth: mainColors.grey3,
+    orange: mainColors.orange,
   },
   border: mainColors.grey2,
 };
