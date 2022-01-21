@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
+import { Text } from 'react-native';
 
 const Splash = () => {
   return <Text>Splash is here</Text>;
