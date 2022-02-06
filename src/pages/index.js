@@ -4,6 +4,7 @@ import Intro from './Intro';
 import Login from './Login';
 import Register from './Register';
 import ForgotPassword from './ForgotPassword';
+import { LayananUmum, LayananKhusus } from './Layanan';
 
 export {
   Splash,
@@ -14,4 +15,6 @@ export {
   ForgotPassword,
   Search,
   Profile,
+  LayananKhusus,
+  LayananUmum,
 };

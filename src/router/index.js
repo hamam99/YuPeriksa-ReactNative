@@ -4,7 +4,7 @@ import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { TransitionPresets } from '@react-navigation/stack';
-import { Intro, Login, Home, Search, Profile, Splash, Register, ForgotPassword } from '../pages';
+import { Intro, Login, Home, Search, Profile, Splash, Register, ForgotPassword, LayananUmum, LayananKhusus } from '../pages';
 
 const Stack = createStackNavigator();
 
@@ -70,6 +70,16 @@ const Router = () => {
       <Stack.Screen
         name="Profile"
         component={Profile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="LayananUmum"
+        component={LayananUmum}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="LayananKhusus"
+        component={LayananKhusus}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
