@@ -3,6 +3,7 @@ import { Alert, Text, ToastAndroid, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { styles } from './styles';
 
 const LayananUmum = () => {
   const Header = () => {
@@ -15,33 +16,12 @@ const LayananUmum = () => {
     };
 
     return (
-      <View
-        style={{
-          height: 58,
-          alignItems: 'center',
-          marginHorizontal: 20,
-          flexDirection: 'row',
-        }}>
+      <View style={styles.wrapperHeader}>
         <TouchableOpacity onPress={onPressBack}>
           <Ionicons size={20} name="chevron-back" />
         </TouchableOpacity>
-        <Text
-          style={{
-            fontSize: 16,
-            flex: 1,
-          }}>
-          Umum
-        </Text>
-        <TouchableOpacity
-          onPress={onPressFilter}
-          style={{
-            backgroundColor: '#EEEEEE',
-            width: 31,
-            height: 28,
-            borderRadius: 8,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
+        <Text style={styles.titleHeader}>Umum</Text>
+        <TouchableOpacity onPress={onPressFilter} style={styles.filterHeader}>
           <FontAwesomeIcons size={20} color="#969A99" name="filter" />
         </TouchableOpacity>
       </View>
@@ -61,7 +41,7 @@ const LayananUmum = () => {
     );
   };
   return (
-    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+    <View style={styles.container}>
       <Header />
       <Divider />
 
