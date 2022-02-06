@@ -23,4 +23,10 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  dividerHeader: {
+    height: 1,
+    width: '100%',
+    backgroundColor: '#E2E2E2',
+    marginHorizontal: 20,
+  },
 });

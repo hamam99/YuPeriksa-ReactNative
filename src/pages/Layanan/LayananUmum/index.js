@@ -29,22 +29,13 @@ const LayananUmum = () => {
   };
 
   const Divider = () => {
-    return (
-      <View
-        style={{
-          height: 1,
-          width: '100%',
-          backgroundColor: '#E2E2E2',
-          marginHorizontal: 20,
-        }}
-      />
-    );
+    return <View style={styles.dividerHeader} />;
   };
+
   return (
     <View style={styles.container}>
       <Header />
       <Divider />
-
       <Text style={{ marginHorizontal: 20 }}>Layanan Umum</Text>
     </View>
   );
