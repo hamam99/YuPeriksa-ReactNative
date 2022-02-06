@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    // backgroundColor: '#ffffff',
   },
   wrapperHeader: {
     height: 58,
@@ -28,5 +28,15 @@ export const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#E2E2E2',
     marginHorizontal: 20,
+    marginBottom: 20,
+  },
+  menuFilter: {
+    marginLeft: 14,
+    width: 140,
+    height: 35,
+    backgroundColor: '#ffffff',
+    borderRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

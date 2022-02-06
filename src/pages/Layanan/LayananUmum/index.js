@@ -7,6 +7,24 @@ import { styles } from './styles';
 
 const LayananUmum = () => {
   const [idMenuFilterActive, setIdMenuFilterActive] = useState(0);
+  const filterMenu = [
+    {
+      id: 1,
+      title: 'Klinik',
+    },
+    {
+      id: 2,
+      title: 'Puskesmas',
+    },
+    {
+      id: 3,
+      title: 'Kebidanan',
+    },
+    {
+      id: 4,
+      title: 'Perawatan Tubuh',
+    },
+  ];
 
   const Header = () => {
     const onPressBack = () => {
@@ -34,20 +52,15 @@ const LayananUmum = () => {
     return <View style={styles.dividerHeader} />;
   };
 
-  const renderItem = ({ item }) => {
+  const renderItemFilter = ({ item }) => {
     const isActive = idMenuFilterActive === item.id;
 
     return (
       <TouchableOpacity
-        style={{
-          marginLeft: 14,
-          width: 140,
-          height: 35,
-          backgroundColor: isActive ? '#FFEDCE' : '#ffffff',
-          borderRadius: 15,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
+        style={[
+          styles.menuFilter,
+          { backgroundColor: isActive ? '#FFEDCE' : '#ffffff' },
+        ]}
         onPress={() => {
           setIdMenuFilterActive(item.id);
         }}>
@@ -59,32 +72,12 @@ const LayananUmum = () => {
   };
 
   const MenuFilter = () => {
-    console.log('MenuFilter');
-    const filterMenu = [
-      {
-        id: 1,
-        title: 'Klinik',
-      },
-      {
-        id: 2,
-        title: 'Puskesmas',
-      },
-      {
-        id: 3,
-        title: 'Kebidanan',
-      },
-      {
-        id: 4,
-        title: 'Perawatan Tubuh',
-      },
-    ];
-
     return (
-      <View style={{ paddingVertical: 20 }}>
+      <View>
         <FlatList
           data={filterMenu}
           keyExtractor={item => item.id}
-          renderItem={renderItem}
+          renderItem={renderItemFilter}
           horizontal
           showsHorizontalScrollIndicator={false}
         />
