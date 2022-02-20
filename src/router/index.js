@@ -31,7 +31,7 @@ const Router = () => {
         close: config,
       },
     }}
-    initialRouteName="Intro">
+    initialRouteName="LayananUmum">
       <Stack.Screen
         name="Intro"
         component={Intro}
