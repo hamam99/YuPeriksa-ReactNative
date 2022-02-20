@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  FlatList,
-  Image,
-  Text,
-  ToastAndroid,
-  View,
-} from 'react-native';
+import { FlatList, Text, ToastAndroid, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { styles } from './styles';
 import FastImage from 'react-native-fast-image';
 import * as Font from '../../../assets';
+import { Button } from 'react-native-elements';
 
 const LayananUmum = () => {
   const DummyListFilterMenu = [
@@ -270,6 +264,21 @@ const LayananUmum = () => {
                 {item.number_of_services}
               </Text>
             </View>
+            <Button
+              title="Detail"
+              buttonStyle={{
+                borderColor: '#FF972E',
+                borderRadius: 10,
+              }}
+              type="outline"
+              titleStyle={{ color: '#FF972E', fontSize: 12 }}
+              containerStyle={{
+                width: 84,
+                position: 'absolute',
+                right: 0,
+                top: -10,
+              }}
+            />
           </View>
         </View>
       </View>
