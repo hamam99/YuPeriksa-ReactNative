@@ -3,7 +3,7 @@ import { FlatList, Text, ToastAndroid, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { styles } from './styles';
+import { styles } from '../styles';
 import FastImage from 'react-native-fast-image';
 import * as Font from '../../../assets';
 import { Button } from 'react-native-elements';
@@ -161,123 +161,42 @@ const LayananUmum = () => {
   };
 
   const HeaderListHospital = () => {
-    return <View style={{ height: 20 }} />;
+    return <View style={styles.headerListHospital} />;
   };
 
   const DividerListHospital = () => {
-    return <View style={{ height: 17, width: '100%' }} />;
+    return <View style={styles.dividerListHorizontal} />;
   };
 
   const renderItemHospital = ({ item }) => {
     return (
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          backgroundColor: 'white',
-          borderRadius: 15,
-          alignItems: 'center',
-          marginHorizontal: 20,
-          padding: 6,
-        }}>
+      <View style={styles.wrapperItemHospital}>
         <FastImage
-          style={{
-            width: 77,
-            height: 77,
-            borderColor: '#DCDEE1',
-            borderWidth: 1,
-            borderRadius: 11,
-            backgroundColor: 'white',
-          }}
+          style={styles.imageItemHospital}
           source={{ uri: item.image }}
         />
-        <View style={{ flex: 1, marginLeft: 10 }}>
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: 'bold',
-              fontFamily: Font.FAMILY_BOLD,
-            }}>
-            {item.name}
-          </Text>
-          <Text
-            style={{
-              fontSize: 12,
-              fontFamily: Font.FAMILY_MEDIUM,
-              color: '#969A99',
-            }}>
-            {item.address}
-          </Text>
-          <View style={{ flexDirection: 'row' }}>
-            <Text
-              style={{
-                backgroundColor: '#FF972E',
-                borderRadius: 15,
-                width: 46,
-                textAlign: 'center',
-                color: 'white',
-                fontSize: 8,
-                fontWeight: 'bold',
-                alignSelf: 'center',
-                paddingVertical: 3,
-                fontFamily: Font.ROBOTO_BOLD,
-              }}>
-              {item.status}
-            </Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginHorizontal: 8,
-              }}>
-              <Ionicons
-                size={15}
-                name="location-outline"
-                style={{ marginRight: 4 }}
-              />
-              <Text
-                style={{
-                  fontSize: 10,
-                  fontFamily: Font.FAMILY_REGULAR,
-                }}>
-                {item.distance}
-              </Text>
+        <View style={styles.wrapperInfoItemHospital}>
+          <Text style={styles.nameItemHospital}>{item.name}</Text>
+          <Text style={styles.addressItemHospital}>{item.address}</Text>
+          <View style={styles.wrapperBottomItemHospital}>
+            <Text style={styles.statusItemHospital}>{item.status}</Text>
+            <View style={styles.distanceWrapperItemHospital}>
+              <Ionicons size={15} name="location-outline" />
+              <Text style={styles.distanceItemHospital}>{item.distance}</Text>
             </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Ionicons
-                size={15}
-                name="person-outline"
-                style={{ marginRight: 4 }}
-              />
-              <Text
-                style={{
-                  fontSize: 10,
-                  fontFamily: Font.FAMILY_REGULAR,
-                  color: '#969A99',
-                }}>
+            <View style={styles.wrapperNumberOfServicesItemHospital}>
+              <Ionicons size={15} name="person-outline" />
+              <Text style={styles.numberOfServicesItemHospital}>
                 {item.number_of_services}
               </Text>
             </View>
             <Button
+              onPress={() => {}}
               title="Detail"
-              buttonStyle={{
-                borderColor: '#FF972E',
-                borderRadius: 10,
-              }}
+              buttonStyle={styles.button}
               type="outline"
-              titleStyle={{ color: '#FF972E', fontSize: 12 }}
-              containerStyle={{
-                width: 84,
-                position: 'absolute',
-                right: 0,
-                top: -10,
-              }}
+              titleStyle={styles.titleButton}
+              containerStyle={styles.containerButton}
             />
           </View>
         </View>
