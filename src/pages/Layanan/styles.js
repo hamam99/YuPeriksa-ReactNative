@@ -101,6 +101,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginRight: 4,
   },
   numberOfServicesItemHospital: {
     fontSize: 10,
@@ -118,9 +119,7 @@ export const styles = StyleSheet.create({
     fontSize: 10,
   },
   containerButton: {
-    width: 84,
-    position: 'absolute',
-    right: 0,
+    width: 70,
   },
   dividerListHorizontal: {
     height: 17,

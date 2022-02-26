@@ -135,7 +135,7 @@ const LayananUmum = () => {
 
   const MenuFilter = () => {
     return (
-      <View>
+      <View style={{ marginBottom: 8 }}>
         <FlatList
           data={DummyListFilterMenu}
           keyExtractor={item => item.id}
@@ -171,20 +171,28 @@ const LayananUmum = () => {
   const renderItemHospital = ({ item }) => {
     return (
       <View style={styles.wrapperItemHospital}>
-        <FastImage
-          style={styles.imageItemHospital}
-          source={{ uri: item.image }}
-        />
-        <View style={styles.wrapperInfoItemHospital}>
-          <Text style={styles.nameItemHospital}>{item.name}</Text>
-          <Text style={styles.addressItemHospital}>{item.address}</Text>
+        <View style={{ height: 100 }}>
+          <FastImage
+            style={styles.imageItemHospital}
+            source={{ uri: item.image }}
+          />
+        </View>
+
+        <View style={{ flex: 1 }}>
+          <View style={styles.wrapperInfoItemHospital}>
+            <Text style={styles.nameItemHospital}>{item.name}</Text>
+            <Text style={[styles.addressItemHospital, { flex: 1 }]}>
+              {item.address}
+            </Text>
+          </View>
+
           <View style={styles.wrapperBottomItemHospital}>
             <Text style={styles.statusItemHospital}>{item.status}</Text>
             <View style={styles.distanceWrapperItemHospital}>
               <Ionicons size={15} name="location-outline" />
               <Text style={styles.distanceItemHospital}>{item.distance}</Text>
             </View>
-            <View style={styles.wrapperNumberOfServicesItemHospital}>
+            <View style={[styles.wrapperNumberOfServicesItemHospital]}>
               <Ionicons size={15} name="person-outline" />
               <Text style={styles.numberOfServicesItemHospital}>
                 {item.number_of_services}
