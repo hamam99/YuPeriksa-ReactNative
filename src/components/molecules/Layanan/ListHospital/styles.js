@@ -1,45 +1,7 @@
 import { StyleSheet } from 'react-native';
-import * as Font from '../../assets';
+import * as Font from '../../../../assets';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: '#ffffff',
-  },
-  wrapperHeader: {
-    height: 58,
-    alignItems: 'center',
-    marginHorizontal: 20,
-    flexDirection: 'row',
-  },
-  titleHeader: {
-    fontSize: 16,
-    flex: 1,
-  },
-  filterHeader: {
-    backgroundColor: '#EEEEEE',
-    width: 31,
-    height: 28,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  dividerHeader: {
-    height: 1,
-    width: '100%',
-    backgroundColor: '#E2E2E2',
-    marginHorizontal: 20,
-    marginBottom: 10,
-  },
-  menuFilter: {
-    marginLeft: 14,
-    width: 140,
-    height: 35,
-    backgroundColor: '#ffffff',
-    borderRadius: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   wrapperItemHospital: {
     flex: 1,
     flexDirection: 'row',
@@ -48,6 +10,12 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 20,
     padding: 6,
+  },
+  wrapperImage: {
+    height: 100,
+  },
+  containerInfo: {
+    flex: 1,
   },
   wrapperInfoItemHospital: {
     flex: 1,
@@ -67,6 +35,7 @@ export const styles = StyleSheet.create({
     fontFamily: Font.FAMILY_BOLD,
   },
   addressItemHospital: {
+    flex: 1,
     fontSize: 12,
     fontFamily: Font.FAMILY_MEDIUM,
     color: '#969A99',

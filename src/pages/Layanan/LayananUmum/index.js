@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import { FlatList, Text, ToastAndroid, View } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React from 'react';
+import { View } from 'react-native';
 import { styles } from '../styles';
-import FastImage from 'react-native-fast-image';
-import * as Font from '../../../assets';
-import { Button } from 'react-native-elements';
+import Header from '../../../components/atoms/Header';
+import MenuFilter from '../../../components/molecules/Layanan/ListFilter';
+import ListHospital from '../../../components/molecules/Layanan/ListHospital';
 
 const LayananUmum = () => {
   const DummyListFilterMenu = [
@@ -86,138 +83,16 @@ const LayananUmum = () => {
     },
   ];
 
-  const [idMenuFilterActive, setIdMenuFilterActive] = useState(1);
-
-  const Header = () => {
-    const onPressBack = () => {
-      ToastAndroid.show('Back', ToastAndroid.SHORT);
-    };
-
-    const onPressFilter = () => {
-      ToastAndroid.show('Filter', ToastAndroid.SHORT);
-    };
-
-    return (
-      <View style={styles.wrapperHeader}>
-        <TouchableOpacity onPress={onPressBack}>
-          <Ionicons size={20} name="chevron-back" />
-        </TouchableOpacity>
-        <Text style={styles.titleHeader}>Umum</Text>
-        <TouchableOpacity onPress={onPressFilter} style={styles.filterHeader}>
-          <FontAwesomeIcons size={20} color="#969A99" name="filter" />
-        </TouchableOpacity>
-      </View>
-    );
-  };
-
   const Divider = () => {
     return <View style={styles.dividerHeader} />;
-  };
-
-  const renderItemFilter = ({ item }) => {
-    const isActive = idMenuFilterActive === item.id;
-
-    return (
-      <TouchableOpacity
-        style={[
-          styles.menuFilter,
-          { backgroundColor: isActive ? '#FFEDCE' : '#ffffff' },
-        ]}
-        onPress={() => {
-          setIdMenuFilterActive(item.id);
-        }}>
-        <Text style={{ color: isActive ? '#FF972E' : '#969A99' }}>
-          {item.title}
-        </Text>
-      </TouchableOpacity>
-    );
-  };
-
-  const MenuFilter = () => {
-    return (
-      <View style={{ marginBottom: 8 }}>
-        <FlatList
-          data={DummyListFilterMenu}
-          keyExtractor={item => item.id}
-          renderItem={renderItemFilter}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-        />
-      </View>
-    );
-  };
-
-  const ListHospital = () => {
-    return (
-      <FlatList
-        ListHeaderComponent={HeaderListHospital}
-        ItemSeparatorComponent={DividerListHospital}
-        keyExtractor={item => item.id}
-        data={DummyListHospital}
-        renderItem={renderItemHospital}
-        showsVerticalScrollIndicator={false}
-      />
-    );
-  };
-
-  const HeaderListHospital = () => {
-    return <View style={styles.headerListHospital} />;
-  };
-
-  const DividerListHospital = () => {
-    return <View style={styles.dividerListHorizontal} />;
-  };
-
-  const renderItemHospital = ({ item }) => {
-    return (
-      <View style={styles.wrapperItemHospital}>
-        <View style={{ height: 100 }}>
-          <FastImage
-            style={styles.imageItemHospital}
-            source={{ uri: item.image }}
-          />
-        </View>
-
-        <View style={{ flex: 1 }}>
-          <View style={styles.wrapperInfoItemHospital}>
-            <Text style={styles.nameItemHospital}>{item.name}</Text>
-            <Text style={[styles.addressItemHospital, { flex: 1 }]}>
-              {item.address}
-            </Text>
-          </View>
-
-          <View style={styles.wrapperBottomItemHospital}>
-            <Text style={styles.statusItemHospital}>{item.status}</Text>
-            <View style={styles.distanceWrapperItemHospital}>
-              <Ionicons size={15} name="location-outline" />
-              <Text style={styles.distanceItemHospital}>{item.distance}</Text>
-            </View>
-            <View style={[styles.wrapperNumberOfServicesItemHospital]}>
-              <Ionicons size={15} name="person-outline" />
-              <Text style={styles.numberOfServicesItemHospital}>
-                {item.number_of_services}
-              </Text>
-            </View>
-            <Button
-              onPress={() => {}}
-              title="Detail"
-              buttonStyle={styles.button}
-              type="outline"
-              titleStyle={styles.titleButton}
-              containerStyle={styles.containerButton}
-            />
-          </View>
-        </View>
-      </View>
-    );
   };
 
   return (
     <View style={styles.container}>
       <Header />
       <Divider />
-      <MenuFilter />
-      <ListHospital />
+      <MenuFilter ListFilterMenu={DummyListFilterMenu} />
+      <ListHospital data={DummyListHospital} />
     </View>
   );
 };
