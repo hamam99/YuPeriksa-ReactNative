@@ -89,7 +89,7 @@ const LayananUmum = () => {
 
   return (
     <View style={styles.container}>
-      <Header />
+      <Header title={'Layanan Umum'} />
       <Divider />
       <MenuFilter ListFilterMenu={DummyListFilterMenu} />
       <ListHospital data={DummyListHospital} />
