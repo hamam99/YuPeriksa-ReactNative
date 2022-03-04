@@ -31,7 +31,7 @@ const Router = () => {
         close: config,
       },
     }}
-    initialRouteName="HospitalDetail">
+    initialRouteName="Intro">
       <Stack.Screen
         name="Intro"
         component={Intro}
