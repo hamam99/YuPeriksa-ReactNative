@@ -5,6 +5,7 @@ import Login from './Login';
 import Register from './Register';
 import ForgotPassword from './ForgotPassword';
 import { LayananUmum, LayananKhusus } from './Layanan';
+import HospitalDetail from './HospitalDetail';
 
 export {
   Splash,
@@ -17,4 +18,5 @@ export {
   Profile,
   LayananKhusus,
   LayananUmum,
+  HospitalDetail,
 };

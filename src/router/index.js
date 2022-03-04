@@ -4,7 +4,7 @@ import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { TransitionPresets } from '@react-navigation/stack';
-import { Intro, Login, Home, Search, Profile, Splash, Register, ForgotPassword, LayananUmum, LayananKhusus } from '../pages';
+import { Intro, Login, Home, Search, Profile, Splash, Register, ForgotPassword, LayananUmum, LayananKhusus, HospitalDetail } from '../pages';
 
 const Stack = createStackNavigator();
 
@@ -31,7 +31,7 @@ const Router = () => {
         close: config,
       },
     }}
-    initialRouteName="LayananUmum">
+    initialRouteName="HospitalDetail">
       <Stack.Screen
         name="Intro"
         component={Intro}
@@ -80,6 +80,11 @@ const Router = () => {
       <Stack.Screen
         name="LayananKhusus"
         component={LayananKhusus}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="HospitalDetail"
+        component={HospitalDetail}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
